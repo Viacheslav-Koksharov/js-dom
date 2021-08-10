@@ -6,16 +6,13 @@ const ingredients = [
     'Зелень',
     'Приправы',
 ];
-const listEl = document.querySelector('#ingredients');
+const list = document.querySelector("#ingredients");
 
-const makeListOfIngredients = (ingredients) => {
-    return ingredients.map(ingredient => {
-        const listItem = document.createElement('li')
-        listItem.textContent = ingredient;
-        return listItem
-    })
-};
+const element = ingredients.map(ingredient => {
+    const listEl = document.createElement('li')
+    listEl.textContent = ingredient
+    return listEl
+})
 
-const recept = makeListOfIngredients(ingredients);
+list.append(...element)
 
-listEl.append(...recept);

@@ -15,15 +15,29 @@ const images = [
         alt: 'Group of Horses Running',
     },
 ];
+// First variant
+// const gallery = document.querySelector('#gallery')
+// const makeGallery = ({ url, alt }) => {
 
-const galleryEl = document.querySelector('#gallery');
+//     const list = document.createElement('li')
+//     list.classList.add('image-list')
 
-const makeImagesGallery = (images) => {
-    return images.map(({ url, alt }) => {
-        return `<li class = 'image-list'>
-            <img class ='image-form' src="${url}" alt="${alt}" width="320px" />
-        </li>`
-    }).join('')
-};
-const imageGallery = makeImagesGallery(images);
-galleryEl.insertAdjacentHTML('afterBegin', imageGallery);
+//     const el = document.createElement('img')
+//     el.setAttribute('src', url);
+//     el.setAttribute('alt', alt);
+//     el.classList.add('image-form')
+//     list.append(el)
+//     return list
+// }
+// const galleryEl = images.map(makeGallery)
+// gallery.append(...galleryEl)
+
+// Second variant
+const makeListEl = ({ url, alt }) => {
+    return `<li class = 'image-list'>
+    <img class ='image-form' src =${url} alt = ${alt} width="320px" />
+    </li>`
+}
+const gallery = document.querySelector('#gallery')
+const makeList = images.map(makeListEl).join('')
+gallery.insertAdjacentHTML('beforeend', makeList)

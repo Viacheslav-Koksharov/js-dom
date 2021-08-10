@@ -5,16 +5,7 @@ const totalCategories = (categories) => {
 };
 totalCategories(itemEl);
 
-
-
 const listEl = (categories) => {
     categories.forEach(category => (console.log(`Категория: ${category.firstElementChild.textContent}\nКоличество элементов: ${category.lastElementChild.children.length}`)))
 };
 listEl(itemEl);
-
-
-
-
-
-
-
